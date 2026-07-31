@@ -8,6 +8,28 @@
 </head>
 <body>
   <canvas id="heart"></canvas>
+
+  <!-- Plays your song.mp3 -->
+  <audio id="bg-music" loop>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Play Music Button -->
+  <button id="music-btn" onclick="playAudio()">🎵 Play Music</button>
+
   <script src="script.js"></script>
+  <script>
+    function playAudio() {
+      const music = document.getElementById('bg-music');
+      const btn = document.getElementById('music-btn');
+      if (music.paused) {
+        music.play();
+        btn.innerHTML = '⏸️ Pause';
+      } else {
+        music.pause();
+        btn.innerHTML = '🎵 Play Music';
+      }
+    }
+  </script>
 </body>
 </html>
