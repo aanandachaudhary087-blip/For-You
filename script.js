@@ -40,8 +40,8 @@ function drawNextStep() {
       scale++;
     }
 
-    // Controls how slowly it draws (smaller = faster, larger = slower)
-    setTimeout(drawNextStep, 15); 
+    // Set to 35ms — slightly slower and super smooth!
+    setTimeout(drawNextStep, 35); 
   }
 }
 
