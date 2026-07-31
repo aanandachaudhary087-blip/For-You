@@ -38,3 +38,17 @@ canvas {
   margin-top: 10px;
   opacity: 0.8;
 }
+/* Tap Hint Styling */
+#tap-hint {
+  position: fixed;
+  bottom: 25px;
+  width: 100%;
+  text-align: center;
+  color: #ffb6c1;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 100;
+}
