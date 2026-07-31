@@ -6,28 +6,30 @@
   <title>Heart Animation</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onclick="playAudio()">
+
   <canvas id="heart"></canvas>
 
   <!-- Plays your song.mp3 -->
-  <audio id="bg-music" loop>
+  <audio id="bg-music" loop preload="auto">
     <source src="song.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- Play Music Button -->
-  <button id="music-btn" onclick="playAudio()">🎵 Play Music</button>
+  <!-- Tap anywhere hint -->
+  <div id="tap-hint">Tap anywhere for sound 🎵</div>
 
   <script src="script.js"></script>
   <script>
+    let played = false;
     function playAudio() {
-      const music = document.getElementById('bg-music');
-      const btn = document.getElementById('music-btn');
-      if (music.paused) {
+      if (!played) {
+        const music = document.getElementById('bg-music');
         music.play();
-        btn.innerHTML = '⏸️ Pause';
-      } else {
-        music.pause();
-        btn.innerHTML = '🎵 Play Music';
+        played = true;
+        
+        // Hide the tap hint once played
+        const hint = document.getElementById('tap-hint');
+        if (hint) hint.style.display = 'none';
       }
     }
   </script>
